@@ -22,12 +22,8 @@ document.querySelector('.check').addEventListener('click', function () {
     // now increasing the width of 'number' class div element.
     document.querySelector('.number').style.width = '30rem';
   } else {
-    /*
-    if (user_input > rand)
-      document.querySelector('.message').textContent = '👆too high';
-    else document.querySelector('.message').textContent = '👇too low';*/
-    
-    document.querySelector('.message').textContent = user_input > rand ? '👆too high' : '👇too low';
+    document.querySelector('.message').textContent =
+      user_input > rand ? '👆too high' : '👇too low';
 
     if (score > 1) {
       score--;
@@ -41,6 +37,7 @@ document.querySelector('.check').addEventListener('click', function () {
 
 document.querySelector('.again').addEventListener('click', function () {
   rand = Math.trunc(Math.random() * 21); // mainly cut non-decimal part.
+  if (rand == 0) rand += 1;
   score = 10;
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.number').textContent = '?';
