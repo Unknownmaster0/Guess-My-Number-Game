@@ -33,6 +33,7 @@ main {
   justify-content: space-around;
 }
 
+/* diving portion left and right */
 .left {
   width: 52rem;
   display: flex;
